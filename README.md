@@ -1,18 +1,14 @@
-# 🚢 Titanic Survival Prediction — Logistic Regression Baseline
+# 🚢 Titanic - Machine Learning from Disaster | Kaggle Best Score: 0.78229
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![Kaggle Score](https://img.shields.io/badge/Kaggle%20Score-0.77033-brightgreen)
 
 ## 🧠 Project Overview
 
 This project implements a **supervised machine learning pipeline** to predict passenger survival in the Titanic disaster using the Kaggle Titanic dataset.
 
-The objective is to build a strong, interpretable baseline model and understand the socio-demographic factors influencing survival outcomes.
+The objective is to build and compare different machine learning models and understand the factors influencing passenger survival.
 
-This work follows a complete data science workflow:  
-**data preprocessing → feature engineering → model training → evaluation → submission**
+This work follows a complete data science workflow:
+**data preprocessing → feature engineering → model training → evaluation → model comparison → submission**
 
 ---
 
@@ -24,8 +20,8 @@ The Titanic disaster provides a classic binary classification problem:
 
 Formally:
 
-- Target variable: `Survived ∈ {0, 1}`  
-- Task type: Binary classification  
+* Target variable: `Survived ∈ {0, 1}`
+* Task type: Binary classification
 
 ---
 
@@ -35,13 +31,13 @@ Source: Kaggle Titanic Competition
 
 Key attributes:
 
-- Passenger class (Pclass)
-- Sex
-- Age
-- SibSp (siblings/spouses aboard)
-- Parch (parents/children aboard)
-- Fare
-- Embarked (port of embarkation)
+* Passenger class (`Pclass`)
+* Sex
+* Age
+* SibSp (siblings/spouses aboard)
+* Parch (parents/children aboard)
+* Fare
+* Embarked (port of embarkation)
 
 Missing values were carefully handled using statistically sound imputation strategies.
 
@@ -50,70 +46,96 @@ Missing values were carefully handled using statistically sound imputation strat
 ## ⚙️ Methodology
 
 ### 🔹 Data Preprocessing
-- Missing value imputation (Age, Embarked)
-- Encoding categorical variables (One-Hot Encoding)
-- Feature selection for interpretability and performance
 
-### 🔹 Model
-- Logistic Regression (Baseline linear classifier)
-- Chosen for:
-  - Interpretability
-  - Efficiency
-  - Strong baseline performance on tabular data
+* Missing value imputation (Age, Embarked)
+* Encoding categorical variables
+* Feature selection and preprocessing
+* Preparation of training and test datasets
+
+### 🔹 Models
+
+Several machine learning models were trained and evaluated:
+
+* **Logistic Regression**
+* **Random Forest**
+* **XGBoost**
+* **LightGBM**
+
+Logistic Regression was used as an interpretable baseline, while tree-based ensemble and gradient boosting models were tested to improve predictive performance.
 
 ### 🔹 Training Strategy
-- Train-validation split done manually
-- Model trained on processed feature matrix
-- Evaluation using accuracy metric
+
+* Train-validation split
+* Models trained on the processed feature matrix
+* Evaluation using accuracy
+* Final models submitted to the Kaggle Titanic competition
 
 ---
 
 ## 📈 Results
 
-- **Model:** Logistic Regression  
-- **Kaggle Public Score:** ⭐ **0.77033**
+The original Logistic Regression baseline achieved a **Kaggle Public Score of 0.77033**.
 
-This score demonstrates a strong baseline performance without advanced feature engineering or ensemble methods.
+After experimenting with additional machine learning models, the best-performing model so far is **LightGBM**, achieving a **Kaggle Public Score of 0.78229**.
+
+| Model               | Kaggle Public Score |
+| ------------------- | ------------------: |
+| Logistic Regression |             0.77033 |
+| **LightGBM**        |      **0.78229** 🏆 |
+
+### 🏆 Best Model
+
+**LightGBM — Kaggle Public Score: 0.78229**
+
+This represents an improvement of **0.01196 points** over the original Logistic Regression baseline.
 
 ---
 
 ## 🔍 Key Insights
 
-- Gender is the most influential survival predictor
-- Simple linear models can perform competitively with proper preprocessing
+* Gender is one of the most influential predictors of survival.
+* Proper preprocessing and feature representation have a significant impact on model performance.
+* Tree-based ensemble and boosting models can improve upon the Logistic Regression baseline.
+* Among the models submitted so far, **LightGBM achieved the highest Kaggle score**.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python 🐍
-- Pandas
-- NumPy
-- Scikit-learn
-- Jupyter Notebook 
+* Python 🐍
+* Pandas
+* NumPy
+* Scikit-learn
+* Random Forest
+* XGBoost
+* LightGBM
+* Jupyter Notebook
 
 ---
 
 ## 🚀 Future Improvements
 
-- Feature engineering (Title extraction, Family size, Age bins)
-- Ensemble models (Random Forest, XGBoost, LightGBM)
-- Hyperparameter tuning (GridSearchCV / RandomizedSearchCV)
-- Cross-validation for robustness
-- Model stacking for performance boost
+* Feature engineering (Title extraction, Family size, Age bins)
+* Hyperparameter tuning
+* Cross-validation for robustness
+* Further optimization of LightGBM, XGBoost, and Random Forest
+* Model ensemble / stacking
+* Additional feature selection and interaction features
 
 ---
 
 ## 🏁 Conclusion
 
-This project demonstrates how a **well-structured machine learning pipeline** can achieve strong predictive performance even with a simple model. It emphasizes that data preprocessing and feature representation often matter more than model complexity.
+This project demonstrates how different machine learning approaches can be applied to a classic binary classification problem.
+
+Starting with a **Logistic Regression baseline of 0.77033**, additional ensemble and boosting models were explored. The current best result is achieved by **LightGBM with a Kaggle Public Score of 0.78229**.
+
+The project emphasizes the importance of data preprocessing, model selection, and systematic experimentation in improving machine learning performance.
 
 ---
 
 ## 👨‍💻 Author
 
-**Amrit Sarker**  
-Applied Statistics and Data Science,  
+**Amrit Sarker**
+Applied Statistics and Data Science,
 University of Dhaka
-
----
